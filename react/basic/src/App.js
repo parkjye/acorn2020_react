@@ -12,8 +12,18 @@ import './App.css';
 class App extends Component {
   render(){
     const myName="김구라";
-    const isMan=false //true, false
+    const isMan=true; //true, false
     
+    //요소에 적용할 인라인 css를 object로 정의하고 적용할 수 있다.
+    const boxStyle={
+      width:"100px",
+      height:"100px",
+      margin:"10px",
+      border:"1px solid red",
+      backgroundColor:"lightYellow" //여러 단어로 구성된 속성은 camel case를 사용한다.
+    }
+
+
     //<div id=root> 요소 안에 동적으로 만들어져서 브라우저에 해석된다.  
     return(
       // React에서 class는 예약어이기 때문에 html요소에 class명을 줄 때는 'className'을 사용해서 명시한다.
@@ -39,6 +49,7 @@ class App extends Component {
         }}>
           클릭하세요.
         </button>
+        <div style={boxStyle}>box</div>
       </div> 
     ); 
   }
