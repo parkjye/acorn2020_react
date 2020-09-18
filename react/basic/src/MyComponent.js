@@ -33,7 +33,7 @@ class MyComponent extends Component {
                 <h2>{this.props.title}</h2>
                 <p>전달 된 num-100 = {this.props.num-100}</p>
                 <button className="btn btn-outline-success"onClick={()=>{
-                    //setState()를 이용해서 상태값을 바꿀 수 있다.
+                    //setState()를 이용해서 상태값을 바꿀 수 있다. (새로운 object를 넣어주는 방식)
                     //상태값의 변화가 생기면 UI가 자동으로 update된다.
                     //변화가 생긴다는 것은 참조값이 바뀌어야 된다는 것이다.
                     this.setState({
