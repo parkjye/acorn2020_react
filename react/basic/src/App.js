@@ -7,6 +7,7 @@ import kim from './images/kim1.png'
 //css파일을 import만 해도 css가 자동 적용된다.
 import './css/bootstrap.css';
 import './App.css';
+import MyComponent from './MyComponent';
 
 //class 표현식으로 App 구성
 class App extends Component {
@@ -50,6 +51,9 @@ class App extends Component {
           클릭하세요.
         </button>
         <div style={boxStyle}>box</div>
+
+        {/* 다른 Component를 포함 시킬 수 있다. */}
+        <MyComponent />
       </div> 
     ); 
   }
