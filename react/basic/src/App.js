@@ -21,9 +21,24 @@ class App extends Component {
         <h1>Hello React!</h1>
         <p>내 이름은 <strong>{myName}</strong></p>
         <img src={logo} alt="react js 로고 입니다."/>
-        <img src={kim} alt="김구라 이미지"/>
+        <img src={kim} alt="김구라 이미지"/> 
         <p>당신은 {isMan ? "남자" : "여자"} 입니다.</p> {/* if else */}
         <p>{isMan && "당신은 남자 입니다."}</p> {/* 단일 if문. false이면 화면 노출 안된다. */}
+
+        {/*
+          [ 이벤트 처리 ]
+
+          onEventName={ 화살표 함수 }
+
+          처럼 on 다음에 이벤트 명을 camel case로 작성한다.
+          화살표 함수는 해당 이벤트가 발생하면 자동으로 호출된다.
+          ex) onClick, onMouseOver, onChange, onInput, onKeyDown, onFocus ...
+        */}
+        <button className="btn btn-outline-primary" onClick={()=>{
+          alert("버튼을 클릭했습니다.");
+        }}>
+          클릭하세요.
+        </button>
       </div> 
     ); 
   }
