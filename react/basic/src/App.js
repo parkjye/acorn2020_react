@@ -12,6 +12,7 @@ import './App.css';
 class App extends Component {
   render(){
     const myName="김구라";
+    const isMan=false //true, false
     
     //<div id=root> 요소 안에 동적으로 만들어져서 브라우저에 해석된다.  
     return(
@@ -21,6 +22,8 @@ class App extends Component {
         <p>내 이름은 <strong>{myName}</strong></p>
         <img src={logo} alt="react js 로고 입니다."/>
         <img src={kim} alt="김구라 이미지"/>
+        <p>당신은 {isMan ? "남자" : "여자"} 입니다.</p> {/* if else */}
+        <p>{isMan && "당신은 남자 입니다."}</p> {/* 단일 if문. false이면 화면 노출 안된다. */}
       </div> 
     ); 
   }
