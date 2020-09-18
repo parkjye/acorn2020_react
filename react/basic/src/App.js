@@ -52,8 +52,9 @@ class App extends Component {
         </button>
         <div style={boxStyle}>box</div>
 
-        {/* 다른 Component를 포함 시킬 수 있다. */}
-        <MyComponent />
+        {/* 다른 (자식) Component를 포함 시킬 수 있다. */}
+        <MyComponent title="컴포넌트1" num={1000}/>
+        <MyComponent title="컴포넌트2" num={2000}/>
       </div> 
     ); 
   }
