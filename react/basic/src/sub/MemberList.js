@@ -13,7 +13,7 @@ class MemberList extends Component {
                         <td>{item.num}</td>
                         <td>{item.name}</td>
                         <td>{item.addr}</td>
-                        <td><button onClick={()=>{
+                        <td><button className="btn btn-warning" onClick={()=>{
                             //props로 전달된 함수 호출하면서 삭제할 번호를 전달한다.
                             this.props.deleteClicked(item.num);
                         }}>삭제</button></td>
@@ -22,8 +22,8 @@ class MemberList extends Component {
             }
         );
         return (
-            <table>
-                <thead>
+            <table className="table">
+                <thead className="thead-dark">
                     <tr>
                         <th>번호</th>
                         <th>이름</th>
