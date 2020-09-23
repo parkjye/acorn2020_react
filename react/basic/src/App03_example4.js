@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MemberList from './sub/MemberList';
+import InputComponent from './sub/InputComponent';
 
 class App03_example4 extends Component {
     //회원의 번호를 카운트할 상태값
@@ -9,12 +10,9 @@ class App03_example4 extends Component {
     }
 
     //추가 버튼을 눌렀을때 호출되는 함수(메소드)
-    addClicked=()=>{
-        //입력한 이름, 주소, 번호
-        const name=this.inputName.value;
-        const addr=this.inputAddr.value;
+    addClicked=(name, addr)=>{
+        //회원의 번호
         const num=this.state.num+1;
-
         this.setState({num: num});
 
         //회원 한명의 정보를 object 에 담는다. 
@@ -23,6 +21,7 @@ class App03_example4 extends Component {
         //새로운 회원정보를 담은 새 배열을 얻어내서 상태값을 수정해 준다.
         this.setState({memberList: this.state.memberList.concat(mem)});
     }
+
     //삭제 버튼을 눌렀을때 호출되는 함수 
     deleteClicked=(num)=>{
         const newMemberList=this.state.memberList.filter(
@@ -37,9 +36,7 @@ class App03_example4 extends Component {
 
         return (
             <div>
-                <input ref={(ref)=>{this.inputName=ref;}} type="text" placeholder="이름 입력"/>
-                <input ref={(ref)=>{this.inputAddr=ref;}} type="text" placeholder="주소 입력"/>
-                <button onClick={this.addClicked}>추가</button>
+                <InputComponent addClicked={this.addClicked}/>
                 <h1>회원 목록입니다.</h1>
                 <MemberList memberList={this.state.memberList}
                     deleteClicked={this.deleteClicked}/>
